@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cprotogen"
+authors = [
+    { name = "Matthias Cremieux" },
+]
+version = "0.1"
+urls = { Home = "https://github.com/MattCrmx/cprotogen" }
+requires-python = ">=3.11"
+dependencies = [
+    "pycparser",
+    "pycparser_fake_libc"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "pre-commit",
+    "ruff"
+]
+
+[project.scripts]
+cprotogen = "cprotogen.generator:cli_generate"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+lint.select = [
+    "B",
+    "D",
+    "E",
+    "F",
+    "I",
+    "N",
+    "PGH",
+    "UP",
+    "S",
+    "T20",
+    "TID",
+    "W",
+    "RET"
+]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "parents"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.black]
+skip-magic-trailing-comma = true
+line-length = 100
+
+[[tool.mypy.overrides]]
+module = "pycparser.*,pycparser_fake_libc.*"
+ignore_missing_imports = true
