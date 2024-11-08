@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+
+- :fire: remove testpypi publication.
 
 ## [0.1.0] - 2023-11-08
 
