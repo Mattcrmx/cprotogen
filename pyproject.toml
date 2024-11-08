@@ -22,6 +22,11 @@ dev = [
     "ruff"
 ]
 
+test = [
+    "pytest",
+]
+
+
 [project.scripts]
 cprotogen = "cprotogen.generator:cli_generate"
 
