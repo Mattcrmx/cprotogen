@@ -66,7 +66,7 @@ generate_prototypes("hello.c", "hello.h")
 #ifndef HELLO_H
 #define HELLO_H
 
-void hello_world();
+void hello_world(void);
 
 #endif // HELLO_H
 """
@@ -98,7 +98,7 @@ generate_prototypes("hello.c", "hello.h", overwrite=True)
 #ifndef HELLO_H
 #define HELLO_H
 
-void hello_world();
+void hello_world(void);
 int add_numbers(int a, int b);
 
 #endif // HELLO_H
@@ -114,5 +114,5 @@ from cprotogen.generator import generate_prototypes
 prototypes = generate_prototypes("hello.c")
 print(prototypes)
 # Output:
-# ['void hello_world();\n', 'int add_numbers(int a, int b);\n']
+# ['void hello_world(void);\n', 'int add_numbers(int a, int b);\n']
 ```
